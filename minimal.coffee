@@ -14,7 +14,7 @@ class A extends B
 A?::r = (s, t) ->
   for i in [-1...3] when i not in [0..2] by 2
     for own p of {}
-      p?[0].z = if (undefined) then 2 else 3
+      p?[0].z = if undefined then 2 else 3 // 4
 
   loop
     yield from do ->
@@ -23,5 +23,5 @@ A?::r = (s, t) ->
           t -= 1 until null or yes
 
 A::k = =>
-  t while (this?.x++ < 10**2<<3//4)
+  t while this?.x++ < 10**2<<3
 
