@@ -1,0 +1,11 @@
+{
+  "name": "cs-minimal-code",
+  "version": "1.0.0",
+  "description": "CoffeeScript code to generate all possible CoffeeScript tokens in the smallest set of code possible",
+  "main": "index.js",
+  "scripts": {
+    "test": "coffee minimal-test.coffee"
+  },
+  "author": "Shuan Wang",
+  "license": "ISC"
+}
