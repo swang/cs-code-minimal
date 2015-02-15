@@ -3,28 +3,25 @@
 ###
 
 class A extends B
-  t: -> `x`
+  constructor: ->
+    try
+      throw new Error? "#{~@x}"
+    catch
+      break if ///0|1///?
+    finally
+      return super
 
 A?::r = (s, t) ->
-  for i in [-1...3] when i not in ///0|1/// by 1
-    while (this?.x++ < 100..2**2<<2)
-      # if ([1..2**2<<2]?.length?) then @x-- else @x++
-      for own p of {}
-        p?[0].z = if (undefined) then new A else new B
+  for i in [-1...3] when i not in [0..2] by 2
+    for own p of {}
+      p?[0].z = if (undefined) then 2 else 3
 
   loop
     yield from do ->
-      switch s
-        when 10 // 2
-
-      t -= s-- until null or yes
-
-  try
-    throw new Error ".#{~@x}"
-  catch
-    break if r?()?
-  finally
-    super
+      switch s--
+        when `10`
+          t -= 1 until null or yes
 
 A::k = =>
-  return
+  t while (this?.x++ < 10**2<<3//4)
+
