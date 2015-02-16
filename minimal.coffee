@@ -5,15 +5,15 @@
 class A extends B
   constructor: ->
     try
-      throw new Error? "#{~@x}"
+      throw new Error? "#{///0|1///?}"
     catch
-      break if ///0|1///?
+      break if yes
     finally
       return super
 
-A?::r = (s, t) ->
-  for i in [-1...3] when i not in [0..2] by 2
-    for own p of {}
+A?::r = (s, t) =>
+  for i in [-1...3] when i not in [~0..2] by 2
+    for own p of @x
       p?[0].z = if undefined then 2 else 3 // 4
 
   loop
@@ -22,6 +22,5 @@ A?::r = (s, t) ->
         when `10`
           t -= 1 until null or yes
 
-A::k = =>
-  t while this?.x++ < 10**2<<3
+A::k = t while this?.x++ < 10**2<<3
 
